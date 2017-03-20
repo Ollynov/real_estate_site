@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">AirAlien</a>
+      <a class="navbar-brand" href="#">Luxury Real Estate</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -19,7 +19,9 @@
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag avatar_url(current_user), class:"img-circle" %>&nbsp;
+
+            <%= gravatar_tag current_user.email, size: 40 %>
+            <%= link_to 'change avatar', 'http://en.gravatar.com' %>
             <%= current_user.fullname %>
             <span class="caret"></span>
             </a>
