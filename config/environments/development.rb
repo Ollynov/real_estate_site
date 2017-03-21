@@ -54,4 +54,13 @@ Rails.application.configure do
 
   ## CUSTOM THAT I HAVE ADDED
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    enable_starttls_auto: true,
+    user_name: 'YOUR_SENDGRID_USERNAME',
+    password: 'YOUR_SENDGRID_PASSWORD',
+    authentication: 'plain'
+  }
 end
