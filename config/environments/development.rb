@@ -60,7 +60,7 @@ Rails.application.configure do
     port: 587,
     enable_starttls_auto: true,
     user_name: 'YOUR_SENDGRID_USERNAME',
-    password: 'YOUR_SENDGRID_PASSWORD',
+    password: SENDGRID_API_KEY,
     authentication: 'plain'
   }
 end
