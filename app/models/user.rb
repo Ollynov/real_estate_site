@@ -7,12 +7,19 @@ class User < ApplicationRecord
 
   validates :fullname, presence: true, length: {maximum: 50}
 
+  # This method pulls data from Facebook, to save to DB
   def self.from_omniauth(auth)
-    user = User.where(:email => auth.info.email).first
+    user = User.where(email: auth.info.email).first
 
+    # If we find the user, then they are already signed up and we simply return them, otherwise
+    # we will need to add their info into the DB and sign them up.
     if user
       return user
     else
+      #before we throw them into the DB, we do an extra pre-caution, and check just in case the uid already
+      # exists in the DB. The uid is an ID that facebook (the auth.provider) assigns. This would only be in the case
+      # that someone changes their login email for example. We couldn't run this function right away, because not everyone
+      # signed up with facebook, and may not all have a uid.
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
