@@ -21,6 +21,7 @@ class User < ApplicationRecord
       # that someone changes their login email for example. We couldn't run this function right away, because not everyone
       # signed up with facebook, and may not all have a uid.
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.fullname = auth.info.name
         user.provider = auth.provider
         user.uid = auth.uid
         user.email = auth.info.email
