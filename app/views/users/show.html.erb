@@ -2,7 +2,7 @@
   <div class="col-md-3">
     <div class="center">
       <% if(@user.image) %>
-        <img src=<%= @user.image%> alt="some_text" style="width:55px;height:55px;">
+        <img src=<%= @user.image%> alt="some_text" class: "avatar-full", style="width:90px;height:90px;">
       <% else %>
         <%= gravatar_tag @user.email, size: 55, class: 'img-circle' %>
       <% end %>
