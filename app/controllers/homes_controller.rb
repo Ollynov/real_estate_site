@@ -1,4 +1,4 @@
-class homesController < ApplicationController
+class HomesController < ApplicationController
   before_action :set_home, only: [:show, :edit, :update]
   # This means that the set_home function will run before the show, edit, and update methods below
   before_action :authenticate_user!, except: [:show]
@@ -46,4 +46,5 @@ class homesController < ApplicationController
 
     def home_params
       params.require(:home).permit(:home_type, :bed_room, :bath_room, :listing_name, :summary, :address, :is_furnished, :is_ready, :price)
+    end
 end

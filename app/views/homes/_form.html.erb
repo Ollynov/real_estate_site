@@ -1,0 +1,35 @@
+<div class='panel panel-default'>
+  <div class='panel-heading'>
+    Create your listing
+  </div>
+  <div class="panel-body">
+    <div class="container"></div>
+      <%= form_for @home do |f| %>
+        <div class="row">
+          <div class= "col-md-4 select">
+            <div class="form-group">
+              <label>Home Type</label>
+              <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Bed and Breakfast", "Bed and Breakfast"], ["Townhouse/Condo", "Townhouse/Condo"]], id: "home_type", prompt: "Select...", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class= "col-md-4 select">
+            <div class="form-group">
+              <label>Home Type</label>
+              <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Bed and Breakfast", "Bed and Breakfast"], ["Townhouse/Condo", "Townhouse/Condo"]], id: "home_type", prompt: "Select...", class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class= "col-md-4 select">
+            <div class="form-group">
+              <label>Home Type</label>
+              <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Bed and Breakfast", "Bed and Breakfast"], ["Townhouse/Condo", "Townhouse/Condo"]], id: "home_type", prompt: "Select...", class: 'form-control' %>
+            </div>
+          </div>
+
+
+
+        </div>
+      <% end %>
+  </div>
+</div>
