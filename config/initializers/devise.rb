@@ -256,7 +256,6 @@ Devise.setup do |config|
 
   config.omniauth :google_oauth2, ENV['GOOGLE_APP_CLIENT_ID'], ENV['GOOGLE_APP_CLIENT_SECRET']
 
- #  config.omniauth :google_oauth2,'164622276750-plikll1usafeibjj5eervlodbt2228e2.apps.googleusercontent.com', 'a4a63Pr8_hG0RGMkkQoW0jd3'
 
 
   # ==> Warden configuration
