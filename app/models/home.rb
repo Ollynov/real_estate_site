@@ -7,7 +7,6 @@ class Home < ApplicationRecord::Base
   validates :listing_name, presence: true, length: {maximum: 50}
   validates :summary, presence: true, length {maximum: 500}
   validates :address, presence: true
-  validates :home_type, presence: true
   validates :is_furnished, presence: true
   validates :is_ready, presence: true
 end
