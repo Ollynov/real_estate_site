@@ -46,7 +46,7 @@ gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-
+#look at secrets.yml for keys
 
 
 group :development, :test do
