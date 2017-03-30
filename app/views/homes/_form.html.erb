@@ -24,10 +24,12 @@
           <div class= "col-md-4 select">
             <div class="form-group">
               <label>Price</label>
-              <%= f.number_field :price, placeholder: "Listing Price", step: 0.5 %>
+              <%= f.number_field :price, step: 5000 %>
             </div>
           </div>
 
+<!--           value: number_to_currency(f.object.price.to_f, unit: "R$", separator: ",", delimiter: ""),
+ -->
 
 
 
