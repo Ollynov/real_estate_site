@@ -1,5 +1,6 @@
 class Home < ActiveRecord::Base
   belongs_to :user
+  has_many :photos
 
   validates :home_type, presence: true
   validates :bed_room, presence: true

@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :homes
   # there are no restrictions for homes. For users, ALL we have is a path of /users/:id (the show path), because
   # that's all we need. While we need ALL of the views for homes /homes/new, homes/:id, etc
+  resources :photos
 end

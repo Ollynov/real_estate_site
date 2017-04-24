@@ -48,6 +48,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 #look at secrets.yml for keys
 
+gem 'paperclip'
+#for photo uploading
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

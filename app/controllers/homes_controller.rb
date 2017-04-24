@@ -10,6 +10,7 @@ class HomesController < ApplicationController
   end
 
   def show
+    @photos = @home.photos
     @home = Home.find(params[:id])
   end
 
@@ -21,19 +22,40 @@ class HomesController < ApplicationController
     @home = current_user.homes.build(home_params)
 
     if @home.save
-      redirect_to @home, notice: "Saved!"
+
+      if params[:images]
+        params[:images].each do |image|
+          @home.photos.create(image: image)
+        end
+      end
+
+      @photos = @home.photos
+      redirect_to edit_home_path(@home), notice: "Saved!"
     else
       render :new
     end
   end
 
   def edit
-
+    # This conditional here is so that only you can edit your own photos
+    if current_user.id == @homes.user.id
+      @photo = @home.photos
+    else
+      redirect_to root_path, notice: "No permission"
+    end
   end
 
   def update
     if @home.update(room_params)
-      redirect_to @home, notice: "Updated!"
+
+      if params[:images]
+        params[:images].each do |image|
+          @home.photos.create(image: image)
+        end
+      end
+
+      redirect_to edit_home_path(@home), notice: "Updated!"
+
     else
       render :edit
     end
