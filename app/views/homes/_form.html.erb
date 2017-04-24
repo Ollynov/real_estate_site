@@ -69,10 +69,13 @@
         </div><br>
 
         <div class="row">
-          <div class= "col-md-4 select">
+          <div class= "col-md-4">
             <div class="form-group">
               <label>Price</label>
-              <%= f.number_field :price, step: 5000 %>
+              <div class="input-group">
+                <div class="input-group-addon", style="padding: 5px 12px">$</div>
+                <%= f.number_field :price, step: 5000 %>
+              </div>
             </div>
           </div>
         </div><br>
