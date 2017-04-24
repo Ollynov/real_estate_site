@@ -39,7 +39,7 @@ class HomesController < ApplicationController
   def edit
     # This conditional here is so that only you can edit your own photos
     if current_user.id == @homes.user.id
-      @photo = @home.photos
+      @photos = @home.photos
     else
       redirect_to root_path, notice: "No permission"
     end

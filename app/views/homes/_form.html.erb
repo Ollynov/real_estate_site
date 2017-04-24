@@ -4,7 +4,7 @@
   </div>
   <div class="panel-body">
     <div class="container"></div>
-      <%= form_for @home do |f| %>
+      <%= form_for @home, html: {multipart: true} do |f| %>
 
         <br>
         <div class="row">
@@ -56,6 +56,19 @@
             </div>
           </div>
         </div><br>
+
+        <div class="row">
+          <div class= "col-md-12 select">
+            <div class="form-group">
+              <span class="btn btn-default btn-file">
+                <i class= "fa fa-cloud-upload fa-lg"></i>Photo Upload
+                <%= file_field_tag "images[]", type: file, multiple: true %>
+              </span>
+            </div>
+          </div>
+        </div><br>
+
+        <div id="photos"><%= render 'photos/list' %></div>
 
         <div class="row">
           <div class="col-md-4">
